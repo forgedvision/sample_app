@@ -22,7 +22,7 @@ guard 'rspec', all_after_pass: false, cli: '--drb' do
     "spec/requests/authentication_pages_spec.rb"
   end
 
-
+  watch(%r{^app/views/layouts/(.+)$})                           { |m| "spec/#{m[1]}_spec.rb" }
 
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
